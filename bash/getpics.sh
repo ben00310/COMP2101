@@ -22,6 +22,6 @@ test -d ~/Pictures && cat <<EOF
 Found $(find ~/Pictures -type f|wc -l) files in the Pictures directory.
 The Pictures directory uses $(du -sh ~/Pictures|awk '{print $1}') space on the disk.
 EOF
-wget ~/Pictures/pics.tgz http://zonzorp.net/pics.tgz
-tar -C ~/Pictures/ -xvf pics.tgz
-rm ~/pics.tgz
+wget -O ~/Pictures/pics.tgz http://zonzorp.net/pics.tgz
+tar -C ~/Pictures -xvf ~/Pictures/pics.tgz
+rm ~/Pictures/pics.tgz
